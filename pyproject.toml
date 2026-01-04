@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "llm-api"
+version = "0.1.0"
+description = "LLM API"
+authors = ["Mor Morgan <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "llm_api", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+fastapi = "^0.128.0"
+uvicorn = { version = "^0.40.0", extras = ["standard"] }
+transformers = "^4.57.3"
+
+# CPU-only torch from PyTorch index (לא CUDA)
+torch = { version = "2.5.1+cpu", source = "pytorch-cpu" }
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
+httpx = "^0.28.1"
+ruff = "^0.14.10"
+mypy = "^1.19.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

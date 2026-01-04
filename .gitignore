@@ -1,0 +1,24 @@
+# Python
+_pycache_/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+.env
+.venv/
+venv/
+
+# Poetry
+.poetry/
+poetry.lock
+
+# Pytest
+.pytest_cache/
+
+# Build
+dist/
+build/
+
+# Docker
+*.log
